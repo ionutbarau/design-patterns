@@ -1,0 +1,25 @@
+Abstract Factory provides a contract for creating families of related or dependant objects without having to specify
+their concrete classes. It is also called as a factory of factories.
+
+It is implemented as an interface/abstract class that defines methods for creating abstract generic objects(products).
+This interface is implemented into a concrete implementation that overrides the methods and create concrete instances
+of the general objects.
+
+E.g. Address and phone numbers are different across countries. Instead of implementing logic in generic Phone and Address
+classes for every country, we can extend them for every country and keep only th common logic into them.
+We then provide a concrete factory implementation that will be used to create instances of the
+Phone and Address classes for that specific country. In order to create specific implementation of a factory we need a
+producer that clients can use in order to create the right factory implementation.
+
+Another example could be the file or windowing system in OS. Java implements them as an abstract factory so the OS
+in order to provide the functionality, look and feel of the OS. The Window object has the look and feel of the OS,
+but you do not work with Windows, OSX or Linux versions of the Window object.
+
+The concrete factory classes are ussualy implemented as singletons because there is no need to have multiple instances.
+
+When to use it:
+1. The client of the factory should be independent of how the products are created.
+2. The application should be configured with one of multiple families of products
+3. You want to provide a collection of classes and you want to reveal just their contracts and relationships,
+not their implementations.
+4. Objects need to be created as a set, in order to be compatible.
