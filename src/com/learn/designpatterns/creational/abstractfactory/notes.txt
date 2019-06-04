@@ -1,5 +1,5 @@
 Abstract Factory provides a contract for creating families of related or dependant objects without having to specify
-their concrete classes. It is also called as a factory of factories.
+their concrete classes. It is also called as a factory of factories or kit(adding Kit suffix, e.g WidgetKit instead of WidgetFactory).
 
 It is implemented as an interface/abstract class that defines methods for creating abstract generic objects(products).
 This interface is implemented into a concrete implementation that overrides the methods and create concrete instances
@@ -15,11 +15,13 @@ Another example could be the file or windowing system in OS. Java implements the
 in order to provide the functionality, look and feel of the OS. The Window object has the look and feel of the OS,
 but you do not work with Windows, OSX or Linux versions of the Window object.
 
-The concrete factory classes are ussualy implemented as singletons because there is no need to have multiple instances.
-
 When to use it:
 1. The client of the factory should be independent of how the products are created.
 2. The application should be configured with one of multiple families of products
 3. You want to provide a collection of classes and you want to reveal just their contracts and relationships,
 not their implementations.
 4. Objects need to be created as a set, in order to be compatible.
+
+Related patterns
+ 1.The concrete factory classes are usually implemented as Singletons because there is no need to have multiple instances.
+ 2.The abstract factory class methods are often implemented with Factory Methods or Prototype

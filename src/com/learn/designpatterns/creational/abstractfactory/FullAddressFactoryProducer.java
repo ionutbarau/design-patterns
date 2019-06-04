@@ -20,4 +20,9 @@ public class FullAddressFactoryProducer {
         }
         return null;
     }
+
+    public static void main(String[] args) {
+        FullAddressAbstractFactory factory = FullAddressFactoryProducer.getFactory("RO");
+        System.out.println("Phone = " + factory.createPhone().getPhoneNumber() + " & Address = " + factory.createAddress().printAddress());
+    }
 }
