@@ -1,0 +1,23 @@
+Builder separates the construction of a complex object from it's representation so that the same construction process
+can create different representations
+
+It is composed of an abstract interface (Builder) that is responsible for creating parts of Product objects. A concrete
+implementation of the abstract interface (ConcreteBuilder) constructs and assembles parts of the product by implementing
+the Builder interface, defines and keeps track of the representation that it creates and provides and interface for
+retrieving the product. The Director is responsible for creating the Product object through the use of the Builder.
+The Product represents the complex object under construction.
+Some times the Director can be skipped, giving clients the responsibility of using the Builder.
+Builder can be also represented as a static class inside the Product class that offers methods for constructing
+it's state one step at the time(user.withUsername, user.withPassword) that return the Builder instance and a build method
+that returns the actual Product. In this case the the Director and Product are the same.
+This pattern lets you vary a product representation giving you control over the construction process.
+
+E.g.
+
+When to use it:
+1. The algorithm of creating a complex object should be independent of the parts that make up the object and how they're assembled
+2. The construction process must allow different representations for the object that's constructed
+3. The number of parameters in the constructor is high
+Related patterns
+ 1.The concrete factory classes are usually implemented as Singletons because there is no need to have multiple instances.
+ 2.The abstract factory class methods are often implemented with Factory Methods or Prototype
