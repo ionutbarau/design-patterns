@@ -6,18 +6,30 @@ implementation of the abstract interface (ConcreteBuilder) constructs and assemb
 the Builder interface, defines and keeps track of the representation that it creates and provides and interface for
 retrieving the product. The Director is responsible for creating the Product object through the use of the Builder.
 The Product represents the complex object under construction.
+The client itself is not responsible for executing the steps for the creation of the product, it rather just passes a
+Concrete Builder to the Director in order to construct the product.
 Some times the Director can be skipped, giving clients the responsibility of using the Builder.
 Builder can be also represented as a static class inside the Product class that offers methods for constructing
 it's state one step at the time(user.withUsername, user.withPassword) that return the Builder instance and a build method
-that returns the actual Product. In this case the the Director and Product are the same.
+that returns the actual Product. In this case the the Director and Product are the same. The v2 builder promotes
+immutability.
+
+
 This pattern lets you vary a product representation giving you control over the construction process.
+
 
 E.g.
 
 When to use it:
 1. The algorithm of creating a complex object should be independent of the parts that make up the object and how they're assembled
 2. The construction process must allow different representations for the object that's constructed
-3. The number of parameters in the constructor is high
+3. The number of parameters in the constructor is high (v2, see Effective Java)
 Related patterns
- 1.The concrete factory classes are usually implemented as Singletons because there is no need to have multiple instances.
- 2.The abstract factory class methods are often implemented with Factory Methods or Prototype
+ 1.The abstract factory is similar in that it too creates complex objects. The Builder constructs step by step
+ while Abstract Factory emphasis on families of products(complex or simple). Builder returns the product as the final step,
+ while Abstract Factory returns it immediately.
+ 2.A composite is what the builder often builds
+
+ Useful links with examples
+ 1. https://sourcemaking.com/design_patterns/builder/java/2
+ 2. https://en.wikipedia.org/wiki/Builder_pattern#Java

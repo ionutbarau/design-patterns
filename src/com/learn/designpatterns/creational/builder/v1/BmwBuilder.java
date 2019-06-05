@@ -1,6 +1,8 @@
 package com.learn.designpatterns.creational.builder.v1;
 
 /**
+ * A concrete builder.
+ *
  * User: Ionut Barau (ionutbarau)
  * Project: design-patterns
  * Date: 2019-06-04.
@@ -15,17 +17,18 @@ public class BmwBuilder implements CarBuilder {
         Car c  = new Car();
         c.setColor(carTmp.getColor());
         c.setDoors(c.getDoors());
+        c.setTraction("XDrive");
         return c;
     }
 
     @Override
-    public CarBuilder setColor(final String color) {
+    public CarBuilder paint(final String color) {
         carTmp.setColor(color);
         return this;
     }
 
     @Override
-    public CarBuilder setDoors(final int doors) {
+    public CarBuilder assembleDoors(final int doors) {
         carTmp.setDoors(doors);
         return this;
     }

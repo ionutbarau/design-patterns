@@ -9,10 +9,11 @@ package com.learn.designpatterns.creational.builder.v1;
  * Time: 22:27
  */
 interface CarBuilder {
+
     Car build();
 
-    CarBuilder setColor(final String color);
+    CarBuilder paint(final String color);
 
-    CarBuilder setDoors(final int doors);
+    CarBuilder assembleDoors(final int doors);
 
 }
