@@ -1,0 +1,27 @@
+Factory method is described as defining an interface for creating an object, but let subclasses decide which class to instantiate.
+Factory methods lets a class defer instantiation to subclasses.
+
+
+It is composed of a Creator class that has a factory method used to create a Product.
+The Creator class can also provide a default implementation for this factory method, that returns a default ConcreteProduct.
+The Creator class is is extended/implemented in a ConcreteCreator class that overrides the factory method, in order to
+return an instance of an appropriate ConcreteProduct. The creator basically relies on the ConcreteCreator to return the ConcreteProduct instance.
+
+There are 2 main types:
+ 1) The Creator class is an abstract class and does not provide an implementation for the factory method
+ 2) The Creator class is a concrete class and provides default implementation of the factory method.
+
+There is also the another variation called Parameterized factory method that basically
+lets the factory method create multiple kinds of products by taking a parameter that identifies the kind of product to create.
+All objects the factory method creates share the same Product interface
+
+When to use it
+1. A class cannot anticipate the class of objects it must create
+2. A class wants it's subclasses to specify the objects it creates
+3. Classes delegate responsibility to one of several helper subclasses and you want to localize the knowledge of
+which helper subclass is the delegate
+4.It is used in framework or toolkits.
+
+Related patterns
+1. Abstract Factory is often implemented with factory methods (An Abstract Factory is an object that has multiple factory methods on it)
+2. Factory methods are usually called within Template methods
