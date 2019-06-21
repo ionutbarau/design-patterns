@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The client that creates objects based on loaded prototypes.
+ * The client that creates concrete objects based on loaded prototypes.
  *
  * User: Ionut Barau (ionutbarau)
  * Project: design-patterns
