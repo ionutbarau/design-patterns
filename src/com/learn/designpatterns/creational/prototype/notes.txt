@@ -1,0 +1,30 @@
+Prototype specifies the kinds of objects to create using a prototypical instance, and creates new objects by copying this prototype.
+It uses a clone method for creating instances.
+
+Prototype allows us to hide the complexity of making new instances from the client.
+The concept is to copy an existing object rather than creating a new instance from scratch,
+something that may include costly operations. The existing object acts as a prototype and contains the state of the object.
+The newly copied object may change same properties only if required. This approach saves costly resources and time,
+especially when the object creation is a heavy process.
+
+It is composed of a Prototype abstract class/interface that declares the cloning operation. ConcretePrototypes are needed
+that implement the clone operation in order to return instances of their classes. Also a Client is needed in order to create new
+objects by asking the Prototype to clone itself. There will usually be some sort of registry (prototype manager) with a instance of every
+ConcretePrototype (that can be created with dynamic binding) that the Client can access for cloning.
+
+This pattern has the same consequences that AbstractFactory and Builder have.
+It hides the concrete product classes from the client, thereby reducing the number of names clients know about.
+This allows client to work with application specific classes without modification.
+
+When to use
+1. When a system should be independent of how it's objects are created, composed and represented.
+2. When the classes to instantiate are specified at runtime for example by dynamic loading
+3. To avoid building a class hierarchy of factories that parallels the class hierarchy of products
+4. When instances of a class can have one of only a few different combinations of state.
+It may be more convenient to install a corresponding number of prototypes and clone them rather than instantiating
+the class manually ech time with the appropriate state.
+
+Related patterns
+1.Prototype and AbstractFactory are competing patterns. They can also be used together. An AbstractFactory
+might store a set of prototypes from which to clone and return product objects
+2. Designs that use the Composite and Decorator patterns often can benefit from Prototype
