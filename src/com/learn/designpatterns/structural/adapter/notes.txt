@@ -14,3 +14,7 @@ You want to create a reusable class that cooperates with unrelated or unforeseen
 have compatible interfaces
 You need to use several existing subclasses, but it is impractical to adapt their interface by subclassing every one. An
 object adapter can adapt the interface of its parent class.(composition only)
+
+Related patterns
+Bridge has a similar structure.
+Decorator enhances another object without changing its interface
