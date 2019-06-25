@@ -6,12 +6,12 @@ Bridge is also known as Handle/Body
 It is composed from an Abstraction with its RefinedAbstraction as a subclass and and Implementor with its ConcreteImplementor
 classes in its hierarchy.
 The actual bridge is done through composition. The Abstraction has a reference to the Implementor.
-The Abstraction (Window) defines the abstraction interface and maintains a reference to on object of type Implementor.
-RefinedAbstraction(IconWindow) extends the interface defined by Abstraction.
-Implementor (WindowImpl) defines the interface for implementation classes. The interface does not have to correspond
+The Abstraction (Shape) defines the abstraction interface and maintains a reference to on object of type Implementor.
+RefinedAbstraction(Triangle) extends the interface defined by Abstraction.
+Implementor (Color) defines the interface for implementation classes. The interface does not have to correspond
 exactly to the Abstraction interface, if fact they can be quite different. Typically the Implementor interface provides
 only primitive operations, and Abstraction defines higher-level operations based on these primitives.
-The ConcreteImplementor (XWindowImp, PMWindowImp) implements the Implementor interfaces and defines its concrete implementation.
+The ConcreteImplementor (RedColor, GreenCOlor) implements the Implementor interfaces and defines its concrete implementation.
 Abstraction forwards Client requests to it implementor object.
 
 When to use
