@@ -1,0 +1,27 @@
+Compose objects into tree structures to represent part-whole hierarchies. Composite lets client treat individual objects
+and compositions of objects uniformly.
+It uses recursive composition. The class hierarchy has primitive and composite objects
+
+It is composed of a Component(Graphic) that declares the interface for the objects in the composition.
+It implements default behavior for the interface common to all classes, as appropriate.
+Declares an interface for accessing and managing it's child components. And optionally defines an interface for accessing
+a component's parent in the recursive structure, and implements it if that's appropriate.
+The Leaf(Line, Rectangle) represents a class without any children that defines behavior for primitive objects in the composition
+The Composite (Picture) defines behavior for components having children. It stores child components and implements
+the child-related operations from the Component interface.
+The Client manipulates objects in the composite structure through the Component interface. If the Component that the Client uses
+is a Leaf then the requests to it are handled directly by the Leaf. If it is a Composite, the requests are forward to its
+child components, possibly performing additional operations before and/or after forwarding.
+The Client can treat primitive or composite objects uniformly.
+
+When to use it
+1. You want to represent part-whole hierarchies of objects
+2. You want clients to be able to ignore the difference between compositions of objects and individual objects.
+Clients will treat all objects in composite structure uniformly.
+
+Related patterns
+Often component-parent link is used for a Chain of Responsibility
+Decorator is often used with Composite.
+Flyweight lets you share components but they can no longer refer to their parents.
+Iterator can be used to traverse composites.
+Visitor localizes operations and behavior that would otherwise be distributed across Composites and Leaf classes.
