@@ -1,0 +1,19 @@
+Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to
+subclassing for extending functionality.
+It is also known as a wrapper.
+Encloses a component into another object called Decorator, that provides the same interface the component has and adds additional behavior.
+Decorators can nest other decorators recursively.
+New behavior can be added or removed at runtime simply by attaching and detaching decorators.
+
+It is composed of a Component (VisualComponent) that defines the interface for objects that can have responsibilities added to them dynamically.
+A ConcreteComponent (TextView) defines an object to which additional responsibilities can be attached.
+A Decorator(Decorator) maintains a reference to a Component object and defines an interface that conforms to Component's interface(subclasses Component interface).
+A ConcreteDecorator (BorderDecorator,ScrollDecorator) adds responsibilities to the component.
+Decorator forwards requests to its Component object. It may optionally perform additional operations before and after forwarding the request.
+
+When to use it
+1. To add responsibilities to individual objects dynamically and transparently, without affecting other objects.
+2. For responsibilities that can be withdrawn
+3. When extension by subclassing is impractical. Sometimes a large number of independent extensions are possible and would produce
+an explosion of subclasses to support every combination. Or a class definition may be hidden or otherwise unavailable for subclassing.
+
