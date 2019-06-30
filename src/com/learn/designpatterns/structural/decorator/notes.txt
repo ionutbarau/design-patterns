@@ -7,7 +7,7 @@ New behavior can be added or removed at runtime simply by attaching and detachin
 
 It is composed of a Component (VisualComponent) that defines the interface for objects that can have responsibilities added to them dynamically.
 A ConcreteComponent (TextView) defines an object to which additional responsibilities can be attached.
-A Decorator(Decorator) maintains a reference to a Component object and defines an interface that conforms to Component's interface(subclasses Component interface).
+A Decorator(ScrollDecorator) maintains a reference to a Component object and defines an interface that conforms to Component's interface(subclasses Component interface).
 A ConcreteDecorator (BorderDecorator,ScrollDecorator) adds responsibilities to the component.
 Decorator forwards requests to its Component object. It may optionally perform additional operations before and after forwarding the request.
 
