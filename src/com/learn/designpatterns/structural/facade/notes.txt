@@ -1,0 +1,25 @@
+Facade provides a unified interface to a set of interfaces in a subsystem. Defines a higher level interface that makes
+the subsystem easier to use.
+
+It is composed of a Facade (TravelFacade) that knows which subsystem classes are responsible for a request, and that
+delegates client requests to appropriate subsystem objects. The Subsystem Classes(HotelBooker, FlightBooker) implement the subsystem functionality,
+handle work assigned by the Facade object and they have no knowledge of te Facade (they have not reference to it).
+Clients communicate with the subsystem by sending requests to the Facade, which forwards them to the appropriate
+subsystem objects. Clients that use the facade don't have to access the subsystem objects directly.
+
+When to use it
+1. You want to provide a simple interface to a complex subsystem.
+A facade can provide a simple default view of a subsystem that is good enough for most clients. Only clients needing more
+customization will need to look beyond the facade.
+2. When there are many dependencies between clients and the implementation classes of an abstraction. Introduce the facade
+to decouple subsystem from clients and other subsystems, thereby promoting subsystem independence and portability.
+3. When you want to layer your subsystem. Use a facade to define an entry point to each subsystem level.
+If subsystems are dependent, then you can simplify the dependencies between them by making them communicate with each
+other solely through their facades.
+
+Related patterns
+Abstract factory can be used with Facade to provide interfaces for creating subsystem objects.Abstract factory can also be
+used as an alternative to Facade to hide platform specific classes.
+Mediator is similar to Facade in that it abstracts functionality of existing classes
+Usually only on Facade object is required, thus it can be implemented as a singleton.
+
