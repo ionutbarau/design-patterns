@@ -7,7 +7,7 @@ New behavior can be added or removed at runtime simply by attaching and detachin
 
 It is composed of a Component (VisualComponent) that defines the interface for objects that can have responsibilities added to them dynamically.
 A ConcreteComponent (TextView) defines an object to which additional responsibilities can be attached.
-A Decorator(ScrollDecorator) maintains a reference to a Component object and defines an interface that conforms to Component's interface(subclasses Component interface).
+A Decorator(Decorator) maintains a reference to a Component object and defines an interface that conforms to Component's interface(subclasses Component interface).
 A ConcreteDecorator (BorderDecorator,ScrollDecorator) adds responsibilities to the component.
 Decorator forwards requests to its Component object. It may optionally perform additional operations before and after forwarding the request.
 
@@ -16,4 +16,12 @@ When to use it
 2. For responsibilities that can be withdrawn
 3. When extension by subclassing is impractical. Sometimes a large number of independent extensions are possible and would produce
 an explosion of subclasses to support every combination. Or a class definition may be hidden or otherwise unavailable for subclassing.
+
+
+Related patterns
+Decorator is different from adapter in that it changes only object's responsibilities , not it's interface
+Decorator can be seen as a degenerate composite with only one component. However a decorator adds additional responsibilities.
+It isn't intended for object aggregation.
+Decorator let's you change the skin of an object, while strategy let's you change it's guts. They are both 2 alternative
+ways of changing an object.
 

@@ -3,26 +3,26 @@ package com.learn.designpatterns.structural.decorator;
 /**
  * The ConcreteDecorator class defines specific decorations.
  */
-public class ScrollDecorator extends Decorator{
+public class BorderDecorator extends Decorator{
 
-    private String direction;
+    private int borderWidth;
 
-    public ScrollDecorator(VisualComponent component, String direction) {
+    public BorderDecorator(VisualComponent component, int borderWidth) {
         super(component);
-        this.direction = direction;
+        this.borderWidth = borderWidth;
     }
 
     /**
      * Decorator method
      */
-    private void scroll(){
-        System.out.println("Scrolling " + direction);
+    private void drawBorder(){
+        System.out.println("Drawing " + borderWidth + " px border");
     }
 
     @Override
     public void draw() {
         //do the decoration
-        scroll();
+        drawBorder();
         //forward the request to the component
         super.draw();
     }
