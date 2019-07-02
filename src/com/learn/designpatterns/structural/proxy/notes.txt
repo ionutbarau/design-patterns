@@ -1,0 +1,24 @@
+Provides a surrogate or placeholder for another object to control access to it. Also known as surrogate.
+One reason for controlling access to an object is to defer the full cost of creation and initialization until we actually need to use it.
+A proxy acts as a stand in for the real object. It takes care of creation of the actual real object when needed.
+
+The Proxy(ImageProxy) maintains a reference to the original object. Provides an interface identical to the Subject so that the Proxy can
+be substituted. Controls access to the real subject and may be responsible for creating and deleting it. Other responsibilities
+depend on the kind of proxy : remote proxies are responsible for encoding a request and its arguments for sending to the real subject in a different address space.
+Virtual proxies may cache additional info about the real subject so that they can postpone accessing it. Protection proxies check that the caller
+has the access permissions required to perform the request.
+The Subject(Graphic) defines the common interface for the RealSubject(Image) and Proxy so that the Proxy can be used everywhere the RealSubject is expected.
+The RealSubject(Image) defines the real object that the Proxy represents.
+The Proxy forwards requests to the RealSubject when appropriate, depending of the kind of proxy.
+
+
+When to use
+1. When we need a local representative for an object in different address space(remote proxy).
+2. When we need to create an expensive object object on demand (virtual proxy)
+3. When we need to control access to the original object (protection proxy). Useful when objects should have different access rights.
+4. When we need a replacement for a bare pointer that performs additional actions when an object is accessed (smart reference).
+
+Related patterns
+Adapter provides a different interface to the subject it adapts. In contrast the Proxy provides the same interface as it's subject.
+Decorator can have similar implementations as proxies, but they have a different purpose. A decorator adds one or more responsibilities
+to an object, whereas proxy controls access to an object.
