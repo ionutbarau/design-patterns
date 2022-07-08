@@ -4,7 +4,7 @@ and provides a way to access that single instance.
 
 It is implemented as a single class (Singleton) that is responsible for creating it's own unique instance, and provides
 and Instance operation that clients use to get the single instance. The constructor is private or protected (if we want to allow subclassing)
-so that clients cannot instantiate this class. Instance is usually lazy initialized. Also thread safety needs to be addressed
+so that clients outside of its package cannot instantiate this class (however it can be instantiated from the same package which is not desirable). Instance is usually lazy initialized. Also thread safety needs to be addressed
 if the instance is used in multithreaded applications, because more than one instance can be created if not properly designed.
 
 
